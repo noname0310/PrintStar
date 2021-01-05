@@ -27,9 +27,6 @@
     <ClCompile Include="Graphics.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mathf.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="OOPTool.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -45,12 +42,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Loop.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mathf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OOPTool.h">

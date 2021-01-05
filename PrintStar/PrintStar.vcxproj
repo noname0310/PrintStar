@@ -142,7 +142,6 @@
     <ClCompile Include="Console.c" />
     <ClCompile Include="FrameBuffer.c" />
     <ClCompile Include="Graphics.c" />
-    <ClCompile Include="Mathf.c" />
     <ClCompile Include="OOPTool.c" />
     <ClCompile Include="Point.c" />
     <ClCompile Include="PrintStar.c" />
@@ -151,8 +150,6 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="FrameBuffer.h" />
     <ClInclude Include="Graphics.h" />
-    <ClInclude Include="Loop.h" />
-    <ClInclude Include="Mathf.h" />
     <ClInclude Include="OOPTool.h" />
     <ClInclude Include="Point.h" />
   </ItemGroup>
