@@ -18,8 +18,8 @@ int main()
 	int screen_center_x = width / 2;
 	int screen_center_y = height / 2;
 
-	Point points[point_max + 2];
-
+	Point* points = (Point*)malloc(sizeof(Point) * (point_max + 2));
+	assert(points != NULL);
 	for (int star_point = 3; star_point < point_max; star_point+=2)
 	{
 		int point_counter = 0;
@@ -40,6 +40,7 @@ int main()
 		graphics.f->print((FrameBuffer*)&graphics);
 		graphics.f->clear((FrameBuffer*)&graphics);
 	}
+	free(points);
 	graphics.f->dispose((FrameBuffer*)&graphics);
 	Console.pause();
 	return 0;
