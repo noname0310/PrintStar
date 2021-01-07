@@ -20,11 +20,10 @@ typedef enum CodePage CodePage;
 
 //Struct _Console
 struct _Console {
-	void (*const write_single)(const wchar_t ch);
+	void (*const write_single)(wchar_t ch);
 	void (*const set_cursor_vis)(CursorStat stat);
 	void (*const set_pos)(short x, short y);
 	void (*const set_size)(int x, int y);
-	void (*const default_init)();
 	void (*const font_normalize)(int size);
 	void (*const clear)();
 	void (*const pause)();

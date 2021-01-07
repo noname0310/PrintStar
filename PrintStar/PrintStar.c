@@ -4,10 +4,9 @@ int main()
 {
 	const int width = 160 * 5;
 	const int height = 90 * 5;
-	const int point_max = 50;
+	const int point_max = 5;
 	const float pi = 3.14159265358979323846f;
 
-	Console.default_init();
 	Console.font_normalize(1);
 	Console.set_size(width, height);
 	Console.set_cursor_vis(CursorStat_hide);
@@ -19,12 +18,12 @@ int main()
 
 	Point* points = (Point*)malloc(sizeof(Point) * ((size_t)point_max + 2));
 	assert(points != NULL);
-	for (int star_point = 3; star_point < point_max; star_point+=2)
+	for (int star_point = 3; star_point <= point_max; star_point+=2)
 	{
 		int point_counter = 0;
 		for (int i = 0; i <= 360; i++)
 		{
-			if (!((i - 90) % (360 / star_point)))
+			if (!((i + 90) % (360 / star_point)))
 			{
 				Point point = Point_new(
 					screen_center_x + (int)(cos(i * pi / 180) * radius),

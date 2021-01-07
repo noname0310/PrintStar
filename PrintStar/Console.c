@@ -1,10 +1,9 @@
 #include "Console.h"
 
-static void write_single(const wchar_t ch);
+static void write_single(wchar_t ch);
 static void set_cursor_vis(CursorStat stat);
 static void set_pos(short x, short y);
 static void set_size(int x, int y);
-static void default_init(void);
 static void font_normalize(int size);
 static void clear(void);
 static void pause(void);
@@ -14,13 +13,12 @@ const _Console Console = {
 	.set_cursor_vis = set_cursor_vis,
 	.set_pos = set_pos,
 	.set_size = set_size,
-	.default_init = default_init,
 	.font_normalize = font_normalize,
 	.clear = clear,
 	.pause = pause
 };
 
-static void write_single(const wchar_t ch) {
+static void write_single(wchar_t ch) {//TODO: const remove
 	putwchar(ch);
 }
 
@@ -49,12 +47,6 @@ static void set_size(int x, int y) {
 	sprintf_s(str, sizeof(str), "mode con cols=%d lines=%d", x, y);
 
 	system(str);
-}
-
-static void default_init() {
-	SetConsoleOutputCP(65001);
-	SetConsoleCP(65001);
-	setlocale(LC_ALL, ".UTF8");
 }
 
 static void font_normalize(int size) {
