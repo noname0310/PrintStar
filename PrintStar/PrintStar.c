@@ -29,7 +29,12 @@ int main()
 					screen_center_x + (int)(cos(i * pi / 180) * radius),
 					screen_center_y + (int)(sin(i * pi / 180) * radius)
 				);
-				OOPTool.set_const_value(&points[point_counter++], &point, sizeof(Point));
+				memcpy_s(
+					&points[point_counter++], 
+					sizeof(Point),
+					&point, 
+					sizeof(Point)
+				);
 				graphics.f->draw_single(&graphics, L'&', point, 1);
 			}
 		}

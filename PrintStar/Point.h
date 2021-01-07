@@ -1,7 +1,6 @@
 #pragma once
 
 #include <assert.h>
-#include "OOPTool.h"
 
 struct Point;
 typedef struct Point Point;

@@ -10,7 +10,11 @@ const impl_Graphics* get_impl_Graphics_table() {
 	};
 
 	if (*(void**)&impl_Graphics_table == NULL) {
-		OOPTool.set_const_value(&impl_Graphics_table, get_impl_FrameBuffer_table(), sizeof(impl_FrameBuffer));
+		memcpy_s(&impl_Graphics_table, 
+			sizeof(impl_FrameBuffer), 
+			get_impl_FrameBuffer_table(), 
+			sizeof(impl_FrameBuffer)
+		);
 	}
 
 	return &impl_Graphics_table;
@@ -23,7 +27,11 @@ Graphics Graphics_new(int width, int height) {
 		.f = get_impl_Graphics_table()
 	};
 
-	OOPTool.set_const_value((size_t*)(&instance) + 1, (size_t*)(&parent_instance) + 1, sizeof(FrameBuffer) - sizeof(size_t));
+	memcpy_s((size_t*)(&instance) + 1, 
+		sizeof(FrameBuffer) - sizeof(size_t),
+		(size_t*)(&parent_instance) + 1, 
+		sizeof(FrameBuffer) - sizeof(size_t)
+	);
 	return instance;
 }
 

@@ -2,7 +2,6 @@
 
 #include "Console.h"
 #include "Point.h"
-#include "OOPTool.h"
 
 struct private_FrameBuffer;
 typedef struct private_FrameBuffer private_FrameBuffer;
